@@ -35,6 +35,7 @@ export class hyundaiPage {
 
   async contact(first, last, email, message) {
     await this.page.goto('https://practicetestautomation.com/');
+    await this.page.waitForLoadState('networkidle'); 
 
     await expect(this._contactLink).toBeVisible();
     await this._contactLink.click();
